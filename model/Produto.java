@@ -1,26 +1,29 @@
 package ecommerce.model;
 
-public class Produto  {
+public class Produto {
 
-	private String nome;
+	private String item;
 	private float preco;
-	
-	public Produto(String nome, float preco) {
-		this.nome = nome;
+
+	public Produto(String item, float preco) {
+		this.item = item;
 		this.preco = preco;
 	}
-	
-	public String getNome() {
-		return nome;
+
+	public String getItem() {
+		return item;
 	}
-	public void setNome(String nome) {
-		this.nome = nome;
+
+	public void setItem(String item) {
+		this.item = item;
 	}
+
 	public float getPreco() {
 		return preco;
 	}
+
 	public void setPreco(float preco) {
 		this.preco = preco;
 	}
-	
+
 }

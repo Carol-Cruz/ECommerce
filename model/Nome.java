@@ -1,11 +1,11 @@
 package ecommerce.model;
 
-import ecommerce.Ecommerce;
+import ecommerce.Menu;
 
-public class Nome extends EcommerceModel {
+public class Nome extends ClienteModel {
 	private String nome;
 
-	public Nome(String usuario, String senha) {
+	public Nome(String usuario, String senha, String nome) {
 		super(usuario, senha);
 		// TODO Auto-generated constructor stub
 		this.nome = nome;
@@ -17,13 +17,16 @@ public class Nome extends EcommerceModel {
 
 	public void setNome(String nome) {
 		this.nome = nome;
-	} 
+	}
+
 	@Override
 	public void visualizar() {
 		super.visualizar();
-		System.out.println("Nome do usuário: " + this.nome);
+		System.out.println("Cliente de nome: " + this.nome);
 
 	}
 
-
+	public boolean verificarLogin(String usuario, String senha) {
+		return this.getUsuario().equals(usuario) && this.getSenha().equals(senha);
+	}
 }
