@@ -8,5 +8,7 @@ public interface EcommerceRepository {
 	public void adicionarProduto(Produto produto);
 
 	public void removerProdutos(Produto produto);
+	
+	public void mostraProduto();
 
 }

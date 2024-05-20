@@ -25,6 +25,7 @@ public class Carrinho implements EcommerceRepository {
 		return total;
 	}
 
+	@Override
 	public void mostraProduto() {
 
 		for (Produto produto : produtos) {
