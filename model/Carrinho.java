@@ -9,7 +9,8 @@ public class Carrinho implements EcommerceRepository {
 	private List<Produto> produtos;
 
 	public Carrinho() {
-		produtos = new ArrayList<>();
+		this.produtos = new ArrayList<>();
+
 	}
 
 	public List<Produto> getProdutos() {
@@ -17,16 +18,23 @@ public class Carrinho implements EcommerceRepository {
 	}
 
 	public float calcularTotal() {
-		float total = 0;
+		float total = 0f;
 		for (Produto produto : produtos) {
 			total += produto.getPreco();
 		}
 		return total;
 	}
 
+	public void mostraProduto() {
+
+		for (Produto produto : produtos) {
+			System.out.println(produto.getItem() + " - R$ " + produto.getPreco());
+		}
+
+	}
+
 	@Override
 	public void adicionarProduto(Produto produto) {
-		// TODO Auto-generated method stub
 		produtos.add(produto);
 	}
 
@@ -36,4 +44,5 @@ public class Carrinho implements EcommerceRepository {
 		produtos.remove(produto);
 
 	}
+
 }
