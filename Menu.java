@@ -1,7 +1,9 @@
 package ecommerce;
 
 import java.util.ArrayList;
+
 import java.util.InputMismatchException;
+import java.util.List;
 import java.util.Scanner;
 
 import ecommerce.repository.EcommerceRepository;
@@ -22,41 +24,11 @@ public class Menu {
 		Nome cliente = new Nome(usuario, senha, nome);
 		Carrinho carrinho = new Carrinho();
 
-		ArrayList<Produto> itens = new ArrayList<Produto>();
-		Produto produto1 = new Produto("Camiseta", 29.99f);
-		Produto produto2 = new Produto("Calça jeans", 79.99f);
-		Produto produto3 = new Produto("Shorts", 29.99f);
-		Produto produto4 = new Produto("Blusa de frio", 54.99f);
-		Produto produto5 = new Produto("Saia lápis", 34.99f);
-		Produto produto6 = new Produto("Cropped", 24.99f);
-		Produto produto7 = new Produto("Regata", 19.99f);
-		Produto produto8 = new Produto("Carteira", 29.99f);
-		Produto produto9 = new Produto("Bolsa", 79.99f);
-		Produto produto10 = new Produto("Vestido tubo", 49.99f);
-		Produto produto11 = new Produto("Macaquinho verão", 34.99f);
-		Produto produto12 = new Produto("Cinto", 12.99f);
-		Produto produto13 = new Produto("Necessaire", 24.99f);
-		Produto produto14 = new Produto("Chinelo rasteira", 9.99f);
-		itens.add(produto1);
-		itens.add(produto2);
-		itens.add(produto3);
-		itens.add(produto4);
-		itens.add(produto5);
-		itens.add(produto6);
-		itens.add(produto7);
-		itens.add(produto8);
-		itens.add(produto9);
-		itens.add(produto10);
-		itens.add(produto11);
-		itens.add(produto12);
-		itens.add(produto13);
-		itens.add(produto14);
-
 		while (true) {
 
 			System.out.println("                                                     ");
 			System.out.println("                E-COMMERCE ON-LINE                   ");
-			System.out.println("                    Loja Coraz                       ");
+			System.out.println("                  Loja Da Kharol                     ");
 			System.out.println("                                                     ");
 			System.out.println("                                                     ");
 			System.out.println("                                                     ");
@@ -124,21 +96,55 @@ public class Menu {
 				break;
 
 			case 3:
-				System.out.println("Bem-vindo(a/e) " + cliente.getNome() + " a loja Coraz! ");
+				System.out.println("Bem-vindo(a/e) " + cliente.getNome() + " a Loja Da Kharol! ");
 
 				System.out.println("Produtos disponíveis:");
 
-				int i = 1;
-				for (Produto mostra : itens) {
+				Produto produto1 = new Produto("Camiseta Branca", 29.99f);
+				System.out.println("Item 1: " + produto1.getItem() + " R$"+ produto1.getPreco());
 
-					System.out.println("Item " + i + ": " + mostra.getItem());
-					i++;
-					System.out.println("Preço: " + mostra.getPreco());
+				Produto produto2 = new Produto("Calça jeans", 79.99f);
+				System.out.println("Item 2: " + produto2.getItem() + " R$"+ produto2.getPreco());
 
-				}
+				Produto produto3 = new Produto("Shorts", 29.99f);
+				System.out.println("Item 3: " + produto3.getItem() + " R$"+ produto3.getPreco());
 
-				System.out.println("Para comprar adicione os produtos ao seu carrinho!");
-				System.out.println("Coloque o item relacionado ao produto:");
+				Produto produto4 = new Produto("Blusa de frio", 54.99f);
+				System.out.println("Item 4: " + produto4.getItem() + " R$"+ produto4.getPreco());
+
+				Produto produto5 = new Produto("Saia lápis", 34.99f);
+				System.out.println("Item 5: " + produto5.getItem() + " R$"+ produto5.getPreco());
+
+				Produto produto6 = new Produto("Cropped", 24.99f);
+				System.out.println("Item 6: " + produto6.getItem() + " R$"+ produto6.getPreco());
+
+				Produto produto7 = new Produto("Regata Brazil", 19.99f);
+				System.out.println("Item 7: " + produto7.getItem() + " R$"+ produto7.getPreco());
+
+				Produto produto8 = new Produto("Carteira Couro", 29.99f);
+				System.out.println("Item 8: " + produto8.getItem() + " R$"+ produto8.getPreco());
+
+				Produto produto9 = new Produto("Bolsa", 79.99f);
+				System.out.println("Item 9: " + produto9.getItem() + " R$"+ produto9.getPreco());
+
+				Produto produto10 = new Produto("Vestido tubo", 49.99f);
+				System.out.println("Item 10: " + produto10.getItem() + " R$"+ produto10.getPreco());
+
+				Produto produto11 = new Produto("Macaquinho verão", 34.99f);
+				System.out.println("Item 11: " + produto11.getItem() + " R$"+ produto11.getPreco());
+
+				Produto produto12 = new Produto("Cinto", 12.99f);
+				System.out.println("Item 12: " + produto12.getItem() + " R$"+ produto12.getPreco());
+
+				Produto produto13 = new Produto("Necessaire", 24.99f);
+				System.out.println("Item 13: " + produto13.getItem() + " R$"+ produto13.getPreco());
+
+				Produto produto14 = new Produto("Chinelo rasteira", 9.99f);
+				System.out.println("Item 14: " + produto14.getItem() + " R$"+ produto14.getPreco());
+
+				System.out.println("\nPara comprar adicione os produtos ao seu carrinho!\n");
+				System.out.println("Coloque o n° do item relacionado ao produto:");
+				
 				int produtoEscolhido = captura.nextInt();
 
 				if (produtoEscolhido == 1) {
@@ -170,30 +176,39 @@ public class Menu {
 				}
 				if (produtoEscolhido == 10) {
 					carrinho.adicionarProduto(produto10);
-					
+
 				}
 				if (produtoEscolhido == 11) {
 					carrinho.adicionarProduto(produto11);
-					
+
 				}
 				if (produtoEscolhido == 12) {
 					carrinho.adicionarProduto(produto12);
-					
+
 				}
 				if (produtoEscolhido == 13) {
 					carrinho.adicionarProduto(produto13);
-					
+
 				}
 				if (produtoEscolhido == 14) {
 					carrinho.adicionarProduto(produto14);
-					
-					
+
 				}
 
+				List<Produto> listaProdutos = carrinho.getProdutos();
+				for (Produto mostra : listaProdutos) {
+
+					System.out.println("Item: " + mostra.getItem());
+
+					System.out.println("Preço: " + mostra.getPreco());
+
+				}
 				break;
 
 			case 4:
+
 				System.out.println("Seu carrinho de compras: ");
+				carrinho.mostraProduto();
 				System.out.println("O valor de suas compras está " + carrinho.calcularTotal());
 
 				break;
